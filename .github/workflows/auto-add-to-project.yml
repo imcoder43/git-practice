@@ -2,6 +2,7 @@ name: 🚀 Auto Archive Project Done Columns
 on:
   schedule:
     - cron: '* * * * *'  # 每周日自动运行
+  workflow_dispatch:
     
 
 jobs:
@@ -9,27 +10,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: archive resolved issues
-        uses: alex-page/github-project-automation-plus@v0.8.1
+        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
         with:
-          project: test
-          column: Resolved Issues
-          repo-token: ${{ secrets.GH_PROJECT_TOKEN }}
-          action: archive
+          access-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          repository: git-practice
+          repository-owner: wjgogogo
+          project-name: test
+          column-to-archive: Resolved Issues
+          days-old: 0
+       
+      - name: archive resolved issues
+        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+        with:
+          access-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          repository: git-practice
+          repository-owner: wjgogogo
+          project-name: test
+          column-to-archive: Rejected PR
+          days-old: 0
+      
+      - name: archive resolved issues
+        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+        with:
+          access-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          repository: git-practice
+          repository-owner: wjgogogo
+          project-name: test
+          column-to-archive: Resolved PR
+          days-old: 0
 
-      - name: archive resolved pr
-        uses: alex-page/github-project-automation-plus@v0.8.1
-        with:
-          project: test
-          column: Resolved PR
-          repo-token: ${{ secrets.GH_PROJECT_TOKEN }}
-          action: archive
- 
-
-      - name: archive rejected pr
-        uses: alex-page/github-project-automation-plus@v0.8.1
-        with:
-          project: test
-          column: Rejected PR
-          repo-token: ${{ secrets.GH_PROJECT_TOKEN }}
-          action: archive
- 
+   
