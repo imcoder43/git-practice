@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: archive resolved issues
         uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+        id: archive
         with:
           access-token: ${{ secrets.GH_PROJECT_TOKEN }}
           repository: git-practice
@@ -21,6 +22,7 @@ jobs:
        
       - name: archive resolved issues
         uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+        id: archive
         with:
           access-token: ${{ secrets.GH_PROJECT_TOKEN }}
           repository: git-practice
@@ -31,6 +33,7 @@ jobs:
       
       - name: archive resolved issues
         uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+        id: archive
         with:
           access-token: ${{ secrets.GH_PROJECT_TOKEN }}
           repository: git-practice
