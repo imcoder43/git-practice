@@ -25,4 +25,4 @@ jobs:
           echo 'secrets'
           echo '${{toJSON(secrets) }}'
           echo 'env'
-          echo '${{toJSON(env) }}'
+          echo '${{toJSON(env) }}, $CI'
