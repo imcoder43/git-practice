@@ -14,7 +14,7 @@ jobs:
         run: |
           pwd
           cat .github/workflows/auto-add-to-project.yml
-          git cat-file -p head
+          git log
       - name: echo secrets
         run: echo 'hahah'
 
