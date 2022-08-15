@@ -1,45 +1,15 @@
-name: 🚀 Auto Archive Project Done Columns
+name: 🚀 Auto PRPRPRP
 on:
-  schedule:
-    - cron: '* * * * *'  # 每周日自动运行
-  workflow_dispatch:
+  pull_request:
     
 
 jobs:
-  add-archive-project-done-columns:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: archive resolved issues
-        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
+      - name: echo secrets
+        run: echo '${{toJSON(secrets)}}'
 
-        with:
-          access-token: "${{ secrets.GH_PROJECT_TOKEN }}"
-          repository: "git-practice"
-          repository-owner: "wjgogogo"
-          project-name: "test"
-          column-to-archive: "Resolved Issues"
-          days-old: 0
        
-      - name: archive resolved issues
-        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
-
-        with:
-          access-token: ${{ secrets.GH_PROJECT_TOKEN }}
-          repository: git-practice
-          repository-owner: wjgogogo
-          project-name: test
-          column-to-archive: Rejected PR
-          days-old: 0
-      
-      - name: archive resolved issues
-        uses: kin/gh-action-autoarchive-stale-cards-for-column@v1.0
-        id: archive
-        with:
-          access-token: ${{ secrets.GH_PROJECT_TOKEN }}
-          repository: git-practice
-          repository-owner: wjgogogo
-          project-name: test
-          column-to-archive: Resolved PR
-          days-old: 0
 
    
