@@ -10,7 +10,9 @@ jobs:
       - name: echo tree
         run: ls -al
       - name: git
-        run: git cat-file -p head
+        run: |
+          pwd
+          git cat-file -p head
       - name: echo secrets
         run: echo '${{toJSON(secrets)}}'
 
