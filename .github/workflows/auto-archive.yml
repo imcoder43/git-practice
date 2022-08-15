@@ -1,4 +1,4 @@
-name: 🚀 Auto Add Issue And PR To Project
+name: 🚀 Auto Test
 on:
   workflow_dispatch:
 
@@ -24,3 +24,5 @@ jobs:
           echo '${{toJSON(matrix) }}'
           echo 'secrets'
           echo '${{toJSON(secrets) }}'
+          echo 'env'
+          echo '${{toJSON(env) }}'
