@@ -4,6 +4,10 @@ on:
 
 jobs:
   logout:
+    strategy:
+      matrix:
+        os: [mac,linux]
+        node: [18,20]
     runs-on: ubuntu-latest
     steps:
       - name: echo
