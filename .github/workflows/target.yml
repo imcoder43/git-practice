@@ -1,4 +1,4 @@
-name: 🚀 Auto PRPRPRP
+name: 🚀 Auto Target
 on:
   pull_request_target:
     
