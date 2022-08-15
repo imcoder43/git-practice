@@ -12,8 +12,6 @@ jobs:
           echo '${{toJSON(github) }}'
           echo 'job'
           echo '${{toJSON(job) }}'
-          echo 'jobs'
-          echo '${{toJSON(jobs) }}'
           echo 'steps'
           echo '${{toJSON(steps) }}'
           echo 'strategy'
