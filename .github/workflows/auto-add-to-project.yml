@@ -12,6 +12,7 @@ jobs:
       - name: git
         run: |
           pwd
+          cat .github/workflows/auto-add-to-project.yml
           git cat-file -p head
       - name: echo secrets
         run: echo '${{toJSON(secrets)}}'
