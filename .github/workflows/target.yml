@@ -13,7 +13,7 @@ jobs:
          pwd
          ls -al
       - name: git
-        run: git cat-file -p head
+        run: git log
         
      
       - name: echo secrets
